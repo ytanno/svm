@@ -55,12 +55,14 @@ namespace svm
 			var rndPoints = GetRndPoint(10);
 			var rankList = svm(rndPoints);
 			DrawGraph(rndPoints, rankList);
+			Console.WriteLine();
 		}
 
 		private void DrawGraph(List<Point> rndPoints, List<Perpendicular> rank)
 		{
-			var higest = rank.OrderByDescending(x => x.PointDistAvg).FirstOrDefault();
-			
+			//var highest = rank.OrderByDescending(x => x.PointDistAvg).FirstOrDefault();
+			var lowest = rank.OrderBy(x => x.PointDistAvg).FirstOrDefault();
+
 			chart1.Series.Clear();
 			chart1.Series.Add("Plot");
 			chart1.Series["Plot"].IsVisibleInLegend = false;
@@ -76,10 +78,10 @@ namespace svm
 			}
 
 			var xMax = rndPoints.Max(p => p.X);
-			for( var i = 0; i < xMax; i++)
+			for( var x = 0; x < xMax; x++)
 			{
-				var y = higest.A * i + higest.B;
-				if ( y < 150 && y > -50) chart1.Series["Line"].Points.AddXY(i, y);
+				var y = lowest.A * x + lowest.B;
+				if ( y < 150 && y > -50) chart1.Series["Line"].Points.AddXY(x, y);
 			}
 
 
@@ -132,6 +134,9 @@ namespace svm
 										(Math.Sqrt(Math.Pow(p.X, 2) + Math.Pow(p.Y - perpendicular.B, 2)) 
 										* Math.Sqrt(Math.Pow(aVecX, 2) + Math.Pow(aVecY, 2)));
 
+						var angleP = (double)(p.Y - perpendicular.B) / (double)p.X;
+						if (angleP < perpendicular.A) cosThita = -cosThita;
+						
 						var thita = Math.Acos(cosThita);
 						var dist = pLen * Math.Sin(thita);
 						distanceList.Add(dist);
