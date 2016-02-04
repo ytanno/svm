@@ -1,0 +1,9 @@
+c:\users\idmty\documents\visual studio 2015\Projects\svm\svm\bin\Debug\svm.exe.config
+c:\users\idmty\documents\visual studio 2015\Projects\svm\svm\bin\Debug\svm.exe
+c:\users\idmty\documents\visual studio 2015\Projects\svm\svm\bin\Debug\svm.pdb
+c:\users\idmty\documents\visual studio 2015\Projects\svm\svm\obj\Debug\svm.csprojResolveAssemblyReference.cache
+c:\users\idmty\documents\visual studio 2015\Projects\svm\svm\obj\Debug\svm.Form1.resources
+c:\users\idmty\documents\visual studio 2015\Projects\svm\svm\obj\Debug\svm.Properties.Resources.resources
+c:\users\idmty\documents\visual studio 2015\Projects\svm\svm\obj\Debug\svm.csproj.GenerateResource.Cache
+c:\users\idmty\documents\visual studio 2015\Projects\svm\svm\obj\Debug\svm.exe
+c:\users\idmty\documents\visual studio 2015\Projects\svm\svm\obj\Debug\svm.pdb
